@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY" async defer></script>
+<link
+	rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+	crossorigin=""
+/>
+<script
+	src="https://unpkg.com/leaflet@1.7.1/dist/leaflet-src.js"
+	integrity="sha512-I5Hd7FcJ9rZkH7uD01G3AjsuzFy3gqz7HIJvzFZGFt2mrCS4Piw9bYZvCgUE0aiJuiZFYIJIwpbNnDIM6ohTrg=="
+	crossorigin=""
+></script>
+<script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script>
+<script src="https://unpkg.com/es6-promise@4.0.5/dist/es6-promise.min.js"></script>
+<script>
+	ES6Promise.polyfill();
+	var roads = L.gridLayer
+	.googleMutant({
+		type: "hybrid", // valid values are 'roadmap', 'satellite', 'terrain' and 'roadmap'
+	})
+	.addTo(map);
+var styled = L.gridLayer
+	.googleMutant({
+		type: "roadmap",
+		styles: [
+			{ elementType: "labels", stylers: [{ visibility: "off" }] },
+			{ featureType: "water", stylers: [{ color: "#444444" }] },
+		],
+	})
+	.addTo(map);
+
+</script>
+
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+  </body>
+</html>
