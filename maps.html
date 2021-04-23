@@ -20,9 +20,15 @@
 <script src="https://unpkg.com/es6-promise@4.0.5/dist/es6-promise.min.js"></script>
 <script>
 	ES6Promise.polyfill();
-	var roads = L.gridLayer
+</script>
+
+  </head>
+  <body>
+    <div id="map" class="map"></div>
+   <script type="text/javascript" charset="utf-8">
+var roads = L.gridLayer
 	.googleMutant({
-		type: "hybrid", // valid values are 'roadmap', 'satellite', 'terrain' and 'roadmap'
+		type: "roadmap", // valid values are 'roadmap', 'satellite', 'terrain' and 'roadmap'
 	})
 	.addTo(map);
 var styled = L.gridLayer
@@ -35,10 +41,6 @@ var styled = L.gridLayer
 	})
 	.addTo(map);
 
-</script>
-
-  </head>
-  <body>
-    <div id="map" class="map"></div>
+   </script>
   </body>
 </html>
