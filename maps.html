@@ -44,23 +44,23 @@ html, body, #map {
 
 			var roadMutant = L.gridLayer
 				.googleMutant({
-					maxZoom: 49,
+					maxZoom: 18,
 					type: "roadmap",
 				})
 			.addTo(map);
 
 			var satMutant = L.gridLayer.googleMutant({
-				maxZoom: 49,
+				maxZoom: 18,
 				type: "satellite",
 			});
 
 			var terrainMutant = L.gridLayer.googleMutant({
-				maxZoom: 49,
+				maxZoom: 18,
 				type: "terrain",
 			});
 
 			var hybridMutant = L.gridLayer.googleMutant({
-				maxZoom: 49,
+				maxZoom: 18,
 				type: "hybrid",
 			});
 
@@ -78,18 +78,18 @@ html, body, #map {
 						stylers: [{ visibility: "off" }],
 					},
 				],
-				maxZoom: 49,
+				maxZoom: 18,
 				type: "roadmap",
 			});
 
 			var trafficMutant = L.gridLayer.googleMutant({
-				maxZoom: 49,
+				maxZoom: 18,
 				type: "roadmap",
 			});
 			trafficMutant.addGoogleLayer("TrafficLayer");
 
 			var transitMutant = L.gridLayer.googleMutant({
-				maxZoom: 49,
+				maxZoom: 18,
 				type: "roadmap",
 			});
 			transitMutant.addGoogleLayer("TransitLayer");
@@ -146,7 +146,7 @@ html, body, #map {
 			grid.createTile = function (coords) {
 				var tile = L.DomUtil.create("div", "tile-coords");
 				tile.style.border = "1px solid black";
-				tile.style.lineHeight = "256px";
+				tile.style.lineHeight = "512px";
 				tile.style.textAlign = "center";
 				tile.style.fontSize = "20px";
 				tile.innerHTML = [coords.x, coords.y, coords.z].join(", ");
