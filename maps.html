@@ -44,22 +44,22 @@ html, body, #map {
 
 			var roadMutant = L.gridLayer
 				.googleMutant({
-					maxZoom: 13,
+					maxZoom: 49,
 					type: "roadmap",
 				})
 
 			var satMutant = L.gridLayer.googleMutant({
-				maxZoom: 13,
+				maxZoom: 49,
 				type: "satellite",
 			});
 
 			var terrainMutant = L.gridLayer.googleMutant({
-				maxZoom: 13,
+				maxZoom: 49,
 				type: "terrain",
 			});
 
 			var hybridMutant = L.gridLayer.googleMutant({
-				maxZoom: 13,
+				maxZoom: 49,
 				type: "hybrid",
 			});
 			.addTo(map);
@@ -78,18 +78,18 @@ html, body, #map {
 						stylers: [{ visibility: "off" }],
 					},
 				],
-				maxZoom: 13,
+				maxZoom: 49,
 				type: "roadmap",
 			});
 
 			var trafficMutant = L.gridLayer.googleMutant({
-				maxZoom: 13,
+				maxZoom: 49,
 				type: "roadmap",
 			});
 			trafficMutant.addGoogleLayer("TrafficLayer");
 
 			var transitMutant = L.gridLayer.googleMutant({
-				maxZoom: 13,
+				maxZoom: 49,
 				type: "roadmap",
 			});
 			transitMutant.addGoogleLayer("TransitLayer");
