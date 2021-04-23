@@ -40,30 +40,26 @@ html, body, #map {
 		<div id="map" class="map"></div>
 
 		<script type="text/javascript">
-			var mapopts = {
-				zoomSnap: 0.25,
-			};
-
 			var map = L.map('map').fitWorld();
 
 			var roadMutant = L.gridLayer
 				.googleMutant({
-					maxZoom: 24,
+					maxZoom: 13,
 					type: "roadmap",
 				})
 
 			var satMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 13,
 				type: "satellite",
 			});
 
 			var terrainMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 13,
 				type: "terrain",
 			});
 
 			var hybridMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 13,
 				type: "hybrid",
 			});
 			.addTo(map);
@@ -82,18 +78,18 @@ html, body, #map {
 						stylers: [{ visibility: "off" }],
 					},
 				],
-				maxZoom: 24,
+				maxZoom: 13,
 				type: "roadmap",
 			});
 
 			var trafficMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 13,
 				type: "roadmap",
 			});
 			trafficMutant.addGoogleLayer("TrafficLayer");
 
 			var transitMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 13,
 				type: "roadmap",
 			});
 			transitMutant.addGoogleLayer("TransitLayer");
