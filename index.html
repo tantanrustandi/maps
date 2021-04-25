@@ -40,9 +40,9 @@ html, body, #map {
 		<div id="map" class="map"></div>
 		
 		<script type="text/javascript">
-			var map = L.map("map").setView([50, 30], 10);
+			var map = L.map("map").setView([50.5, 30.5], 10);
 
-			var roadMutant = L.gridLayer
+			var hybridMutant = L.gridLayer
 				.googleMutant({
 					maxZoom: 24,
 					type: "hybrid",
@@ -59,9 +59,9 @@ html, body, #map {
 				type: "terrain",
 			});
 
-			var hybridMutant = L.gridLayer.googleMutant({
+			var roadMutant = L.gridLayer.googleMutant({
 				maxZoom: 24,
-				type: "hybrid",
+				type: "roadmap",
 			});
 
 			var styleMutant = L.gridLayer.googleMutant({
@@ -144,7 +144,7 @@ html, body, #map {
 						"Tilecoord grid": grid,
 					},
 					{
-						collapsed: false,
+						collapsed: true,
 					}
 				)
 				.addTo(map);
