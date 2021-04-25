@@ -31,8 +31,6 @@
 				/*    width: auto; */
 				/*    overflow: visible; */
 				position: absolute;
-				left: 15em;
-				right: 0;
 				height: 100vh;
 			}
 			body {
@@ -44,18 +42,13 @@
 		<div id="map" class="map"></div>
 		
 		<script type="text/javascript">
-			var mapopts = {
-				zoomSnap: 0.25,
-			};
-
-			var map = L.map("map", mapopts).setView([0, 0], 1);
+			var map = L.map("map").setView([0, 0], 18);
 
 			var roadMutant = L.gridLayer
 				.googleMutant({
 					maxZoom: 24,
 					type: "roadmap",
 				})
-				.addTo(map);
 
 			var satMutant = L.gridLayer.googleMutant({
 				maxZoom: 24,
@@ -71,6 +64,7 @@
 				maxZoom: 24,
 				type: "hybrid",
 			});
+				.addTo(map);
 
 			var styleMutant = L.gridLayer.googleMutant({
 				styles: [
