@@ -43,7 +43,7 @@ html, body, #map {
 		<div id="map" class="map"></div>
 		
 		<script type="text/javascript">
-			var map = L.map("map").setView([-6,9119632, 107,3248363], 10);
+			var map = L.map("map").setView([-6.9119632, 107.3248363], 10);
 
 			var hybridMutant = L.gridLayer
 				.googleMutant({
@@ -155,8 +155,8 @@ html, body, #map {
 				
 L.Routing.control({
     waypoints: [
-        L.latLng(-6,9119632, 107,3248363),
-        L.latLng(-6,9119632, 107,4248363)
+        L.latLng(-6.9119632, 107.3248363),
+        L.latLng(-6.9119632, 107.4248363)
     ],
     routeWhileDragging: true,
     showAlternatives : true
