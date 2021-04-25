@@ -17,7 +17,6 @@
 			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 			crossorigin=""
 		/>
-		
 <link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
 
 		<script
@@ -44,7 +43,7 @@ html, body, #map {
 		<div id="map" class="map"></div>
 		
 		<script type="text/javascript">
-			var map = L.map("map").setView([57.74, 57.67], 10);
+			var map = L.map("map").setView([-6,9119632, 107,3248363], 10);
 
 			var hybridMutant = L.gridLayer
 				.googleMutant({
@@ -156,10 +155,11 @@ html, body, #map {
 				
 L.Routing.control({
     waypoints: [
-        L.latLng(57.74, 11.94),
-        L.latLng(57.6792, 11.949)
+        L.latLng(-6,9119632, 107,3248363),
+        L.latLng(-6,9119632, 107,4248363)
     ],
-    routeWhileDragging: true
+    routeWhileDragging: true,
+    showAlternatives : true
 }).addTo(map);
 		</script>
 	</body>
