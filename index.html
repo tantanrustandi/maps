@@ -26,16 +26,14 @@
 		<!-- 		<script type="text/javascript" src="dist/Leaflet.GoogleMutant.js"></script> -->
 		<script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script>
 		<style>
-			#map {
-				/*    margin: 32px; */
-				/*    width: auto; */
-				/*    overflow: visible; */
-				position: absolute;
-				height: 100vh;
-			}
-			body {
-				margin: 0;
-			}
+		body {
+    padding: 0;
+    margin: 0;
+}
+html, body, #map {
+    height: 100%;
+    width: 100vw;
+}
 		</style>
 	</head>
 	<body>
@@ -46,23 +44,23 @@
 
 			var roadMutant = L.gridLayer
 				.googleMutant({
-					maxZoom: 24,
+					maxZoom: 18,
 					type: "roadmap",
 				})
 				.addTo(map);
 
 			var satMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 18,
 				type: "satellite",
 			});
 
 			var terrainMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 18,
 				type: "terrain",
 			});
 
 			var hybridMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 18,
 				type: "hybrid",
 			});
 
@@ -80,18 +78,18 @@
 						stylers: [{ visibility: "off" }],
 					},
 				],
-				maxZoom: 24,
+				maxZoom: 18,
 				type: "roadmap",
 			});
 
 			var trafficMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 18,
 				type: "roadmap",
 			});
 			trafficMutant.addGoogleLayer("TrafficLayer");
 
 			var transitMutant = L.gridLayer.googleMutant({
-				maxZoom: 24,
+				maxZoom: 18,
 				type: "roadmap",
 			});
 			transitMutant.addGoogleLayer("TransitLayer");
