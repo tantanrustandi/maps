@@ -17,11 +17,15 @@
 			integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 			crossorigin=""
 		/>
+		
+<link rel="stylesheet" href="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.css" />
+
 		<script
 			src="https://unpkg.com/leaflet@1.7.1/dist/leaflet-src.js"
 			integrity="sha512-I5Hd7FcJ9rZkH7uD01G3AjsuzFy3gqz7HIJvzFZGFt2mrCS4Piw9bYZvCgUE0aiJuiZFYIJIwpbNnDIM6ohTrg=="
 			crossorigin=""
 		></script>
+<script src="https://unpkg.com/leaflet-routing-machine@latest/dist/leaflet-routing-machine.js"></script>
 
 		<!-- 		<script type="text/javascript" src="dist/Leaflet.GoogleMutant.js"></script> -->
 		<script src="https://unpkg.com/leaflet.gridlayer.googlemutant@latest/dist/Leaflet.GoogleMutant.js"></script>
@@ -40,10 +44,11 @@ html, body, #map {
 		<div id="map" class="map"></div>
 		
 		<script type="text/javascript">
-			var map = L.map("map").setView([50.5, 30.5], 10);
+			var map = L.map("map").setView([57.74, 57.67], 10);
 
 			var hybridMutant = L.gridLayer
 				.googleMutant({
+				  minZoom: 2,
 					maxZoom: 24,
 					type: "hybrid",
 				})
@@ -148,6 +153,14 @@ html, body, #map {
 					}
 				)
 				.addTo(map);
+				
+L.Routing.control({
+    waypoints: [
+        L.latLng(57.74, 11.94),
+        L.latLng(57.6792, 11.949)
+    ],
+    routeWhileDragging: true
+}).addTo(map);
 		</script>
 	</body>
 </html>
