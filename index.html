@@ -31,8 +31,6 @@
 				/*    width: auto; */
 				/*    overflow: visible; */
 				position: absolute;
-				left: 15em;
-				right: 0;
 				height: 100vh;
 			}
 			body {
@@ -50,7 +48,8 @@
 				.googleMutant({
 					maxZoom: 24,
 					type: "roadmap",
-				});
+				})
+				.addTo(map);
 
 			var satMutant = L.gridLayer.googleMutant({
 				maxZoom: 24,
@@ -65,8 +64,7 @@
 			var hybridMutant = L.gridLayer.googleMutant({
 				maxZoom: 24,
 				type: "hybrid",
-			})
-				.addTo(map);
+			});
 
 			var styleMutant = L.gridLayer.googleMutant({
 				styles: [
